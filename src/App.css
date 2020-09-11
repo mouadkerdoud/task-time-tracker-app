@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 
-/* VARIABLES */
+                        /* VARIABLES */
 :root{
     --light-blue:#33a199;
-    --dark-blue: #081324 ;
+    --medium-blue:#0a183d;
+    --dark-blue: #08192d ;
     --ligh-purple:#8f5b73;
+    --red:#ee2853;
     --dark-purple:#372b3f;
 }
 
@@ -13,14 +15,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: var(--dark-blue);
+    overflow: hidden;
 }
 
+
+                        /* HEADER SECTION */
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    background-color: #08192d;
+
 }
 
 
@@ -29,6 +35,7 @@ header li{
     font-weight: 500;
     font-size: 20px;
     list-style: none;
+    
 }
 
 
@@ -38,28 +45,83 @@ header li{
     font-weight: 800;
     text-decoration: none;
     transition: all 0.3s ease 0s;
+    
 }
 
 .nav-elements .mylink:hover{
-    color: #0088a9;
+    /* color: #0088a9; */
+    color: var(--red);
 }
 
 
 .nav-elements li{
     display:inline-block;
     padding: 0px 20px;
+  
+
 }
 
 .grouped-logo li{
     display:inline-block;
     padding: 0px 20px;
+   
 
 }
+
+.grouped-logo img{
+    position: relative;
+    
+    
+}
+
 
 .logo{
     position: relative;
     font-size: 30px;
-    color: var(--ligh-purple);
+    color: white;
     font-weight: 800;
-    bottom: 5px;
+    
+
+}
+
+                        /* LANDING PAGE'S BODY */
+
+.container{
+    background-color: var(--medium-blue) ;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+
+}
+
+.body-content{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding-top: 200px;
+    justify-content: space-around;
+}
+
+.body-content img{
+    position: relative;
+    bottom: 50px;
+}
+
+
+
+.actual-content{
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.actual-content h1{
+    font-size: 80px;
+    color: white;
+}
+
+.actual-content p{
+    font-size: 30px;
+    color: white;
 }

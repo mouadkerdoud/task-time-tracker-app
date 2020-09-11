@@ -9,7 +9,7 @@ const Navbar = () => {
         <header>
             <div className="grouped-logo">
                 <img src={require("../../img/plant.svg.png")}/>
-                <li><NavLink className="mylink logo" to="/">Planny</NavLink></li>
+                <li><NavLink className="mylink logo" to="/"><span style={{color:"#ee2853"}}>Pl</span>anny</NavLink></li>
             </div>
             <nav>
                 <ul className="nav-elements" >
