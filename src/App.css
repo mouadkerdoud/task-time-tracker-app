@@ -38,7 +38,7 @@ header{
 header li{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.1rem;
     list-style: none;
     
 }
@@ -46,7 +46,6 @@ header li{
 
 .mylink{
     color:#edf0f1 ;
-    /* color:var(--ligh-purple); */
     font-weight: 800;
     text-decoration: none;
     transition: all 0.3s ease 0s;
@@ -54,7 +53,6 @@ header li{
 }
 
 .nav-elements .mylink:hover{
-    /* color: #0088a9; */
     color: var(--red);
 }
 
@@ -68,9 +66,8 @@ header li{
 
 .grouped-logo li{
     display:inline-block;
-    padding: 0rem 1rem;
+    padding: 0rem 0.8rem;
    
-
 }
 
 .grouped-logo img{
@@ -82,7 +79,7 @@ header li{
 
 .logo{
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: white;
     font-weight: 800;
     
@@ -111,24 +108,29 @@ header li{
 
 .body-content img{
     position: relative;
-    bottom: 2.5rem;
+    bottom: 4rem;
 }
 
 
 
 .actual-content{
     font-family: "Montserrat", sans-serif;
-    
+    position: relative;
+    bottom: 5rem;
+    text-align: justify;
 }
 
 .actual-content h1{
-    font-size: 4rem;
+    font-size: 10rem;
     color: white;
+    padding-bottom: 0.4rem;
 }
 
 .actual-content p{
     font-size: 1.5rem;
     color: white;
+    position: relative;
+    left: 0.6rem;
 }
 
 
