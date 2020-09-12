@@ -18,13 +18,18 @@
     overflow: hidden;
 }
 
+html{
+    font-size: 20px;
+}
 
                         /* HEADER SECTION */
+
+
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 1.5rem 10%;
     background-color: #08192d;
 
 }
@@ -33,7 +38,7 @@ header{
 header li{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1rem;
     list-style: none;
     
 }
@@ -56,14 +61,14 @@ header li{
 
 .nav-elements li{
     display:inline-block;
-    padding: 0px 20px;
+    padding: 0rem 1rem;
   
 
 }
 
 .grouped-logo li{
     display:inline-block;
-    padding: 0px 20px;
+    padding: 0rem 1rem;
    
 
 }
@@ -77,7 +82,7 @@ header li{
 
 .logo{
     position: relative;
-    font-size: 30px;
+    font-size: 1.5rem;
     color: white;
     font-weight: 800;
     
@@ -100,13 +105,13 @@ header li{
     width: 100%;
     display: flex;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 10rem;
     justify-content: space-around;
 }
 
 .body-content img{
     position: relative;
-    bottom: 50px;
+    bottom: 2.5rem;
 }
 
 
@@ -117,11 +122,58 @@ header li{
 }
 
 .actual-content h1{
-    font-size: 80px;
+    font-size: 4rem;
     color: white;
 }
 
 .actual-content p{
-    font-size: 30px;
+    font-size: 1.5rem;
     color: white;
 }
+
+
+
+
+
+                    /* RESPONSIVENESS */
+
+@media only screen and (max-width: 600px){
+
+
+    .body-content{
+        display: flex;
+        flex-direction: column-reverse;
+        
+        
+    }
+
+    .body-content img{
+        width:28%;
+        margin: auto;
+        position: relative;
+        bottom: 4rem;
+        
+    }
+
+
+    .actual-content{
+        position: relative;
+        bottom: 3rem;
+    }
+
+    .actual-content h1{
+        font-size: 2rem;
+        color: white;
+        padding-bottom: 1rem;
+    }
+    
+    .actual-content p{
+        font-size: 1.16rem;
+        color: white;
+        width: 80%;
+        margin: auto;
+    }
+    
+
+}
+
