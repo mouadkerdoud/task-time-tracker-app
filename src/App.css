@@ -44,7 +44,9 @@ header li{
 }
 
 
+
 .mylink{
+    cursor: pointer;
     color:#edf0f1 ;
     font-weight: 800;
     text-decoration: none;
@@ -212,7 +214,7 @@ header li{
 
 ::placeholder {
     color: var(--medium-blue);
-    font-family: "Montserrat", sans-serif;;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.79rem;
   }
 
@@ -225,6 +227,14 @@ header li{
       margin-top: 2rem;
   }
 
+
+  .authError{
+      font-family: "Montserrat", sans-serif;
+      color:red;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+  }
                     /* RESPONSIVENESS */
 
 @media only screen and (max-width: 600px){
