@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as ReactBootStrap from "react-bootstrap"
 import App from './App';
 import rootReducer from "./reducers/rootReducer"
 
@@ -31,25 +32,22 @@ const store = createStore(
   )
 );
 
-// const profileSpecificProps = {
-//   userProfile: 'users',
-//   useFirestoreForProfile: true,
-//   enableRedirectHandling: false,
-//   resetBeforeLogin: false
-// }
 
 
 const rrfProps = {
   firebase,
   config: fbConfig,
-  // config: profileSpecificProps,
   dispatch: store.dispatch,
   createFirestoreInstance
 };
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
-  if (!isLoaded(auth)) return <div className="center"> <p>Loading Planny...</p></div>;
+  if (!isLoaded(auth)){
+    return <div className="loading"> 
+              <img className="loading-image" src={require("./img/loadingPlant.png")} />
+            </div>;
+  } 
       return children
 }
 
