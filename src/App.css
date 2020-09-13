@@ -88,7 +88,7 @@ header li{
 
                         /* LANDING PAGE'S BODY */
 
-.container{
+.container1{
     background-color: var(--medium-blue) ;
     width: 100%;
     height: 100vh;
@@ -134,8 +134,96 @@ header li{
 }
 
 
+                                    /* SIGN IN & UP PAGES */
 
 
+
+
+
+.myform{
+    position: relative;
+    top: -1.4rem;
+    width: 60%;
+    margin:auto;
+    padding-top: 4rem;
+    padding-bottom:4rem;
+}
+
+.positional{
+    position: relative;
+    top:1rem;
+}
+
+
+
+.myform h5{
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    color: var(--medium-blue);
+}
+
+.myform input{
+    color: var(--medium-blue);
+    font-family: "Montserrat", sans-serif;;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-bottom: 0.1rem solid var(--dark-blue);
+    
+}
+
+.myform input:focus{
+    
+    outline: none;
+    border-bottom: 0.1rem solid var(--red);
+    
+} 
+
+.form-btn{
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    border: 0.01rem solid var(--red);
+    background-color:var(--red); 
+    padding: 0.7rem;
+    width: 4.5rem;
+    color: white;
+    margin-top: 1.2rem;
+}
+
+.form-btn:hover{
+    cursor: pointer;
+    border: 0.01rem solid var(--dark-blue);
+    background: var(--dark-blue);
+}
+
+
+.input-container{
+    position: relative;
+    top: 0.5rem;
+}
+
+.input-field{
+    margin-bottom: 0.8rem;
+}
+
+
+::placeholder {
+    color: var(--medium-blue);
+    font-family: "Montserrat", sans-serif;;
+    font-size: 0.79rem;
+  }
+
+  .positional-field{
+      margin-bottom: 1rem;
+      position: relative;
+  }
+
+  .pos-btn{
+      margin-top: 2rem;
+  }
 
                     /* RESPONSIVENESS */
 

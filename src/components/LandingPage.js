@@ -2,7 +2,7 @@ import React from 'react'
 
 const LandingPage = () => {
     return (
-        <div className="container">
+        <div className="container1">
            <div className="body-content">
                 <div className="actual-content">
                     <h1><span style={{color:"#ee2853"}}>Pl</span>anny</h1>
