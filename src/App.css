@@ -3,19 +3,24 @@
 
                         /* VARIABLES */
 :root{
+
+    /* colors */
     --light-blue:#33a199;
     --medium-blue:#0a183d;
     --dark-blue: #08192d ;
     --ligh-purple:#8f5b73;
     --red:#ee2853;
     --dark-purple:#372b3f;
+
+    /* font */
+    --font: "Montserrat", sans-serif;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 html{
@@ -58,12 +63,15 @@ header{
 
 }
 
+li{
+    list-style: none;
+}
 
 header li{
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-weight: 500;
     font-size: 1.1rem;
-    list-style: none;
+  
     
 }
 
@@ -140,7 +148,7 @@ header li{
 
 
 .actual-content{
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     position: relative;
     bottom: 5rem;
     text-align: justify;
@@ -183,14 +191,14 @@ header li{
 
 
 .myform h5{
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-size: 2rem;
     color: var(--medium-blue);
 }
 
 .myform input{
     color: var(--medium-blue);
-    font-family: "Montserrat", sans-serif;;
+    font-family: var(--font);;
     font-size: 0.8rem;
     width: 100%;
     padding: 0.6rem 1rem;
@@ -209,7 +217,7 @@ header li{
 
 .form-btn{
 
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-size: 0.8rem;
     border: 0.01rem solid var(--red);
     background-color:var(--red); 
@@ -236,9 +244,9 @@ header li{
 }
 
 
-::placeholder {
+.myform ::placeholder {
     color: var(--medium-blue);
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-size: 0.79rem;
   }
 
@@ -253,12 +261,254 @@ header li{
 
 
   .authError{
-      font-family: "Montserrat", sans-serif;
+      font-family: var(--font);
       color:red;
       font-size: 1rem;
       text-align: center;
       margin-top: 2rem;
   }
+
+
+
+                                            /* DASHBOARD */
+
+
+.wrapper{
+    display: flex;
+
+}
+
+/* SIDE BAR */
+#sidebar{
+    font-family: var(--font);
+    background-color: var(--dark-blue);
+    color:white;
+    height: 100vh;
+    width: 13rem;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+ .title-logo{
+    position: absolute;
+    top: 2rem;
+    left: 0.8rem;
+}
+
+
+
+ .title-sidebar{
+    font-size: 1.8rem;
+    position: relative;
+    left: 0.1rem;
+}
+
+#sidebar img{
+    position: relative;
+    top: 0.2rem;
+    bottom: 0.3rem;
+    right: 0.2rem;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    bottom: 1.5rem;
+}
+
+.info-container .name{
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0.1rem;
+    left: 0.3rem;
+}
+
+
+.initials {
+    cursor: pointer;
+    padding-top: 2.2%;
+    font-size: 0.95rem;
+    text-align: center;
+    height: 1.8rem;
+    width: 1.9rem;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    bottom: 0.48rem;
+    right: 0.4rem;
+  }
+
+
+                    /* POPOVER */
+  #popover-basic{
+
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font);
+      font-size: 0.7rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      height: 10rem;
+      width: 12rem;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0,0, 0, 0.12) 0px 3px 1px -2px;
+      top: -2.5rem  !important;
+      left: 0.2rem !important;
+      position: relative;
+      
+  }
+
+  .popover-element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    border-bottom: 1px solid lightgray;
+    flex: 1px;
+  }
+
+
+
+  
+ 
+  .popover-name{
+      display: inline-block;
+      padding-left: 3%;
+  }
+
+  .popover-initials{
+        color: white;
+        padding-top: 2.7%;
+        font-size: 0.8rem !important;
+        text-align: center;
+        height: 1.5rem;
+        width: 1.6rem;
+        background-color: var(--red);
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        bottom: -0.1rem;
+        right: 0.4rem;
+  }
+
+  .profile-settings{
+      
+  }
+ 
+  
+  .logout{
+      text-decoration: none;
+      color: black !important;
+      position: relative;
+      
+      
+  }
+
+            /* DASHBOARD MAIN CONTENT */
+
+
+.dashboard-page{
+    height: 100vh;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+.tasks{
+   
+    width: 70%;
+    margin: 4rem auto 0;
+    
+}
+
+.task-container{
+    background-color: white;
+    padding: 1rem;
+    color: var(--dark-blue);
+    font-family: var(--font) ;
+    font-size: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0,0, 0, 0.12) 0px 3px 1px -2px;
+    
+}
+
+.task-elements{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.task-title{
+    position: absolute;
+    left: 1rem;
+}
+
+.task-actions{
+    position: absolute;
+    right: 2rem;
+}
+
+                                                    /* TASK FORM */
+
+.task-form-container{
+    border: 1px solid white;
+    background-color: white;
+    box-shadow: 5px 0px 10px 0px rgba(0,0,0,.5);
+}
+
+.task-form{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.task-form input{
+    font-family: var(--font) ;
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: var(--dark-blue);
+    position: absolute;
+    left:1rem;
+    border: none;
+    width: 70%;
+    
+}
+
+.task-form input:focus{
+    outline:none
+}
+
+.task-form ::placeholder{
+    font-family: var(--font);
+    font-size: 1rem;
+   
+}
+
+.task-form-right{
+    position: absolute;
+    right: 2rem;
+    font-weight: 900;
+    font-family: var(--font);
+}
+
+.time{
+    margin-right: 0.7rem;
+}
+
+.favicon{
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+
+
                     /* RESPONSIVENESS */
 
 @media only screen and (max-width: 600px){

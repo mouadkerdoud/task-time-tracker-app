@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as ReactBootStrap from "react-bootstrap"
 import App from './App';
 import rootReducer from "./reducers/rootReducer"
 
@@ -32,11 +31,18 @@ const store = createStore(
   )
 );
 
-
+const profileSpecificProps = {
+  userProfile: 'users',
+  useFirestoreForProfile: true,
+  enableRedirectHandling: false,
+  resetBeforeLogin: false
+}
 
 const rrfProps = {
   firebase,
   config: fbConfig,
+//second config added here
+  config: profileSpecificProps,
   dispatch: store.dispatch,
   createFirestoreInstance
 };

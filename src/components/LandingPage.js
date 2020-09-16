@@ -1,7 +1,16 @@
 import React from 'react'
+import NavBar from "./layout/NavBar"
+import {Redirect} from "react-router-dom"
+import {connect} from "react-redux"
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+
+    const {authUid} = props
+    if(authUid) return <Redirect to="/dashboard" />
+
     return (
+        <>
+        <NavBar />
         <div className="container1">
            <div className="body-content">
                 <div className="actual-content">
@@ -12,7 +21,14 @@ const LandingPage = () => {
 
            </div>
         </div>
+        </>
     )
 }
 
-export default LandingPage
+const mapStateToProps = (state)=>{
+    return {
+        authUid:state.firebase.auth.uid
+    }
+}
+
+export default connect(mapStateToProps)(LandingPage)

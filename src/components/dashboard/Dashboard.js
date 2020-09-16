@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from "react-redux"
 import {Redirect} from "react-router-dom"
-
+import TaskList from "../Tasks/TaskList"
+import TaskForm from "../Tasks/TaskForm"
+import Sidebar from "../layout/Sidebar"
 
 export class Dashboard extends Component {
     
@@ -10,8 +12,12 @@ export class Dashboard extends Component {
         if(!authUid) return <Redirect to="/" />
 
         return (
-            <div>
-                DASHBOARD
+            <div className="wrapper">
+                <Sidebar />
+                <div className="dashboard-page">
+                    <TaskForm />
+                    <TaskList />
+                </div>
             </div>
         )
     }

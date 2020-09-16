@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from "react-redux"
 import {Redirect} from "react-router-dom"
 import {signUp} from "../../actions/authActions"
+import NavBar from "../layout/NavBar"
 
 export class SignUp extends Component {
 
@@ -30,6 +31,8 @@ export class SignUp extends Component {
         if(authUid) return <Redirect to="/dashboard" />
 
         return (
+            <>
+             <NavBar />
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="myform" >
                     <h5 >Sign Up</h5>
@@ -78,6 +81,7 @@ export class SignUp extends Component {
                     </div>
                 </form>
             </div>
+            </>
         )
     }
 }

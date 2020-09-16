@@ -1,14 +1,12 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
-import SignedInLinks from "./SignedInLinks"
+import {NavLink, withRouter} from 'react-router-dom'
 import SignedOutLinks from "./SignedOutLinks"
 import {connect} from "react-redux"
-
+import {compose} from "redux"
 
 const Navbar = (props) => {
     const {authUid} = props
-    const links = authUid ?  <SignedInLinks /> : <SignedOutLinks />
-
+    
     return (
         <header>
             <div className="grouped-logo">
@@ -17,7 +15,7 @@ const Navbar = (props) => {
             </div>
             <nav>
                 <ul className="nav-elements" >
-                    {links}
+                    <SignedOutLinks />
                 </ul>
             </nav>
         </header>

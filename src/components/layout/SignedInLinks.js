@@ -6,8 +6,7 @@ import {signOut} from "../../actions/authActions"
 const SignedInLinks = (props) => {
     return (
         <>
-            <li><NavLink className="mylink" to="/create">Create Task</NavLink></li>
-            <li><NavLink className="mylink" onClick={()=>props.signOut()} to=".">Log Out</NavLink></li>
+            <li><NavLink className="logout" onClick={()=>props.signOut()} to=".">Log Out</NavLink></li>
         </>
     )
 }
