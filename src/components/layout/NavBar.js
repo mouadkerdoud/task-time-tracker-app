@@ -1,8 +1,7 @@
 import React from 'react'
-import {NavLink, withRouter} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import SignedOutLinks from "./SignedOutLinks"
 import {connect} from "react-redux"
-import {compose} from "redux"
 
 const Navbar = (props) => {
     const {authUid} = props
@@ -10,7 +9,7 @@ const Navbar = (props) => {
     return (
         <header>
             <div className="grouped-logo">
-                <img src={require("../../img/plant.svg.png")}/>
+                <img src={require("../../img/plant.svg.png")} alt=""/>
                 <li><NavLink className="mylink logo" to={authUid ? "/dashboard" : "/"}><span style={{color:"#ee2853"}}>Pl</span>anny</NavLink></li>
             </div>
             <nav>
@@ -24,7 +23,6 @@ const Navbar = (props) => {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state)
     return {
         authUid:state.firebase.auth.uid
     }

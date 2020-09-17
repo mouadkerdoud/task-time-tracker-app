@@ -49,6 +49,7 @@ const rrfProps = {
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
+
   if (!isLoaded(auth)){
     return <div className="loading"> 
               <img className="loading-image" src={require("./img/loadingPlant.png")} />

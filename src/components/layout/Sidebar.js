@@ -6,7 +6,7 @@ import  {Popover, OverlayTrigger} from "react-bootstrap"
 
 const Sidebar = (props) => {
 
-    const {profile} = props
+    const {profile,authUid} = props
 
     const popover = (
         <Popover id="popover-basic">
@@ -23,7 +23,7 @@ const Sidebar = (props) => {
           
         <div id="sidebar">
             <div className="title-logo" >
-                <img src={require("../../img/plant.svg.png")}/>
+                <img src={require("../../img/plant.svg.png")} alt="" />
                 <span className="title-sidebar"><span style={{color:"#ee2853"}}>Pl</span>anny</span>
             </div>
             <div className="info-container">
@@ -42,6 +42,7 @@ const Sidebar = (props) => {
 const mapStateToProps = (state)=>{
 
     return {
+        authUid:state.firebase.auth.uid,
         profile:state.firebase.profile
     }
 }

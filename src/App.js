@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import SignIn from "./components/auth/SignIn"
 import SignUp from "./components/auth/SignUp"
-import CreateTask from "./components/Tasks/CreateTask"
 import Dashboard from "./components/dashboard/Dashboard"
 
 import "./App.css"

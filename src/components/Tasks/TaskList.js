@@ -1,14 +1,14 @@
 import React from 'react'
 import Task from "./Task"
 
-const TaskList = () => {
+const TaskList = ({tasks}) => {
+
     return (
 
         <div className="tasks">
-            <Task />   
-            <Task />    
-            <Task /> 
-            <Task />   
+           { tasks && tasks.map(task=>{
+               return <Task key={task.id} task={task} />
+           })}
             
               
         </div>

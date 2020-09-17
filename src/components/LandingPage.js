@@ -17,7 +17,7 @@ const LandingPage = (props) => {
                     <h1><span style={{color:"#ee2853"}}>Pl</span>anny</h1>
                     <p><span style={{display:"block"}}>Time isn't the main thing.</span>It's the only thing. </p>
                 </div>
-                <img src={require("../img/plantBody2.png")} className="body-img" alt="body image" />
+                <img src={require("../img/plantBody2.png")} className="body-img" alt="" />
 
            </div>
         </div>

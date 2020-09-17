@@ -1,3 +1,6 @@
+import { actionTypes } from 'redux-firestore'
+
+
 export const signIn = (creds)=>{
     return (dispatch,getState,{getFirebase})=>{
         const firebase = getFirebase()
@@ -17,7 +20,7 @@ export const signOut = ()=>{
         const firebase = getFirebase()
         firebase.auth().signOut()
         .then(()=>{
-            dispatch({type:"LOGOUT_SUCCESS"})
+            dispatch({ type: actionTypes.CLEAR_DATA })
         })
         .catch(err=>{
             dispatch({type:"LOGOUT_FAIL",err})

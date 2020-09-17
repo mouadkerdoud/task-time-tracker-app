@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from "react-redux"
+import {firestoreConnect} from "react-redux-firebase"
+import {compose} from "redux"
 import {Redirect} from "react-router-dom"
 import TaskList from "../Tasks/TaskList"
 import TaskForm from "../Tasks/TaskForm"
@@ -7,25 +9,47 @@ import Sidebar from "../layout/Sidebar"
 
 export class Dashboard extends Component {
     
+    
     render() {
-        const {authUid} = this.props
+        const {authUid,tasks} = this.props
         if(!authUid) return <Redirect to="/" />
 
         return (
             <div className="wrapper">
                 <Sidebar />
                 <div className="dashboard-page">
-                    <TaskForm />
-                    <TaskList />
+                    <TaskForm authUid={authUid} />
+                    <TaskList tasks={tasks} />
                 </div>
             </div>
         )
     }
 }
 const mapStateToProps = (state)=>{
+    console.log(state)
     return {
-        authUid:state.firebase.auth.uid
+        authUid:state.firebase.auth.uid,
+        tasks: state.firestore.ordered.tasks
+        
     }
 }
 
-export default connect(mapStateToProps)(Dashboard)
+
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect(props => {
+        const { authUid } = props;
+        if(!authUid) return []
+        else{
+            return [
+                {
+                    collection: 'tasks',
+                    where : ["userId", "==", authUid]
+                  }
+              ]
+        }
+       
+      })
+
+) (Dashboard)

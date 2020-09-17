@@ -4,12 +4,15 @@ import {connect} from "react-redux"
 import {signOut} from "../../actions/authActions"
 
 const SignedInLinks = (props) => {
+    
     return (
         <>
             <li><NavLink className="logout" onClick={()=>props.signOut()} to=".">Log Out</NavLink></li>
         </>
     )
 }
+
+
 
 
 const mapDispatchToProps = (dispatch)=>{
