@@ -11,6 +11,15 @@ const taskReducer = (state=initialState, action)=>{
             console.log("task added failed",action.err)
             return state
 
+
+        case "DELETE_SUCESS":
+            console.log("task deleted sucess")
+            return state
+
+        case "DELETE_FAILED":
+            console.log("task delted failed",action.err)
+            return state
+
         default:
             return state
 

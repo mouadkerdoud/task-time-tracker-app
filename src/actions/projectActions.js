@@ -1,4 +1,4 @@
-const addTask = (task)=>{
+export const addTask = (task)=>{
     return (dispatch,getState,{getFirestore,getFirebase})=>{
         const firestore = getFirestore()
         const authUid= getState().firebase.auth.uid
@@ -23,4 +23,17 @@ const addTask = (task)=>{
     }
 }
 
-export default addTask
+
+export const deleteTask = (taskId)=>{
+    return (dispatch,getState,{getFirestore})=>{
+        const firestore = getFirestore()
+        firestore.collection("tasks").doc(taskId).delete()
+        .then(()=>{
+            dispatch({type:"DELETE_SUCESS"})
+        })
+        .catch(err=>{
+            dispatch({type:"DELETE_FAILED",err})
+        })
+    }
+}
+
