@@ -1,35 +1,36 @@
 import React from 'react'
-import {deleteTask} from "../../actions/projectActions"
-import {connect} from "react-redux"
+import TaskDate from "./TaskDate"
 
 const Task = (props) => {
 
-    const {deleteTask,task} = props
-    if(task){
-        return (
-            <div className="task-container">
-               <div className="task-elements" >
-                   <p className="task-title">{task.title}</p>
-                   <div className="task-actions">
-                       <span className="favicon"><i className="far fa-pause-circle"></i></span>
-                       <span className="favicon"><i onClick={()=>deleteTask(task.id)} className="fas fa-trash"></i></span>
-                   </div>
-               </div>
-           </div>
-        )
-    }
-    else{
-        return <p>There are no tasks bro</p>
+
+    const {tasks,date_of_task,task_titles} = props
+
+    const getRelevantTasks = (item)=>{
+        if(task_titles.includes(item.title)) return true
+        else return false
     }
     
+    let relevantTasks= tasks.filter(getRelevantTasks)
+  
+   
+    
+        return(
+            < >
+                <div className="day-tasks">{date_of_task}</div>
+                    {relevantTasks.map(taskSet=>(
+                        <TaskDate key={taskSet.id} taskSet={taskSet}  />
+                    ))}
+            </>
+        )    
+      
+   
 }
 
 
-const mapDispatchToProps = (dispatch)=>{
-    return {
-        deleteTask : (taskId)=>dispatch(deleteTask(taskId))
-    }
-}
 
 
-export default connect(null,mapDispatchToProps)(Task)
+
+export default Task
+
+

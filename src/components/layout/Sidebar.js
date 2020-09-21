@@ -6,7 +6,7 @@ import  {Popover, OverlayTrigger} from "react-bootstrap"
 
 const Sidebar = (props) => {
 
-    const {profile,authUid} = props
+    const {profile} = props
 
     const popover = (
         <Popover id="popover-basic">

@@ -20,32 +20,35 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
+
 }
 
 html{
     font-size: 20px;
 }
 
+body{
+    background: blanchedalmond;
+}
 
-
-
-
-                        /* LOADING */
+                       /* PRE LOADING */
 
 .loading{
+    position: relative;
     height: 100vh;
     width: 100%;
+    text-align: center;
     background-color: var(--dark-blue);
     color: white;
     text-align: center;
-    position: relative;
+
 }
 
 .loading-image{
     position: absolute;
     top: 50%;
-    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -126,9 +129,7 @@ header li{
     background-color: var(--medium-blue) ;
     width: 100%;
     height: 100vh;
-    position: relative;
-    
-
+    position: fixed;
 }
 
 .body-content{
@@ -172,7 +173,13 @@ header li{
 
 
 
+.container{
+    background: white;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
 
+}
 
 .myform{
     position: relative;
@@ -275,25 +282,27 @@ header li{
 
 .wrapper{
     display: flex;
-
+    height:100%;
+    padding-bottom:6rem;
 }
 
 /* SIDE BAR */
 #sidebar{
+    display: flex;
+    flex-direction: column-reverse;
     font-family: var(--font);
     background-color: var(--dark-blue);
     color:white;
+    width: 11rem;
     height: 100vh;
-    width: 13rem;
-    position: relative;
-    display: flex;
-    flex-direction: column-reverse;
+    position: fixed;
+   
 }
 
  .title-logo{
     position: absolute;
     top: 2rem;
-    left: 0.8rem;
+    left: 1.1rem;
 }
 
 
@@ -330,6 +339,7 @@ header li{
 .initials {
     cursor: pointer;
     padding-top: 2.2%;
+    padding-right:1% ;
     font-size: 0.95rem;
     text-align: center;
     height: 1.8rem;
@@ -339,7 +349,8 @@ header li{
     display: inline-block;
     position: relative;
     bottom: 0.48rem;
-    right: 0.4rem;
+    right: 0.6rem;
+    margin-left:1rem;
   }
 
 
@@ -395,9 +406,7 @@ header li{
         right: 0.4rem;
   }
 
-  .profile-settings{
-      
-  }
+
  
   
   .logout{
@@ -412,16 +421,26 @@ header li{
 
 
 .dashboard-page{
-    height: 100vh;
-    width: 100%;
-    background-color: blanchedalmond;
+    flex-grow: 1;
+    padding-left: 11rem;
+    position: relative;
 }
 
 .tasks{
    
     width: 70%;
-    margin: 4rem auto 0;
-    
+    margin: 6.5rem auto -3.5rem;
+    overflow: auto;
+}
+
+.day-tasks{
+    font-size: 0.8rem ;
+    font-family: var(--font);
+    background-color: var(--dark-blue);
+    color:white;
+    width: fit-content;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+
 }
 
 .task-container{
@@ -455,6 +474,9 @@ header li{
                                                     /* TASK FORM */
 
 .task-form-container{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
     border: 1px solid white;
     background-color: white;
     box-shadow: 5px 0px 10px 0px rgba(0,0,0,.5);
@@ -465,7 +487,7 @@ header li{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 2rem;
+    padding: 1.3rem;
 }
 
 .task-form input{
@@ -473,11 +495,8 @@ header li{
     font-weight: 900;
     font-size: 0.8rem;
     color: var(--dark-blue);
-    position: absolute;
-    left:1rem;
     border: none;
     width: 70%;
-    
 }
 
 .task-form input:focus{
@@ -491,8 +510,7 @@ header li{
 }
 
 .task-form-right{
-    position: absolute;
-    right: 2rem;
+    width: 30%;
     font-weight: 900;
     font-family: var(--font);
 }

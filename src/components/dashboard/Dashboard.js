@@ -6,6 +6,7 @@ import {Redirect} from "react-router-dom"
 import TaskList from "../Tasks/TaskList"
 import TaskForm from "../Tasks/TaskForm"
 import Sidebar from "../layout/Sidebar"
+import PreLoader from "../PreLoader"
 
 export class Dashboard extends Component {
     
@@ -14,19 +15,23 @@ export class Dashboard extends Component {
         const {authUid,tasks} = this.props
         if(!authUid) return <Redirect to="/" />
 
-        return (
-            <div className="wrapper">
-                <Sidebar />
-                <div className="dashboard-page">
-                    <TaskForm authUid={authUid} />
-                    <TaskList tasks={tasks} />
+        if(tasks){
+            return (
+                <div className="wrapper">
+                    <Sidebar />
+                    <div className="dashboard-page">
+                        <TaskForm authUid={authUid} />
+                        <TaskList tasks={tasks} />
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }else{
+            return <PreLoader />
+        }
+        
     }
 }
 const mapStateToProps = (state)=>{
-    console.log(state)
     return {
         authUid:state.firebase.auth.uid,
         tasks: state.firestore.ordered.tasks
@@ -45,7 +50,8 @@ export default compose(
             return [
                 {
                     collection: 'tasks',
-                    where : ["userId", "==", authUid]
+                    where : ["userId", "==", authUid],
+                    orderBy : ["createdAt" , "desc"]
                   }
               ]
         }

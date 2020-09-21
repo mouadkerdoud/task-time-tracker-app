@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import PreLoader from './components/PreLoader'
 import rootReducer from "./reducers/rootReducer"
 
 
@@ -51,9 +52,7 @@ function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
 
   if (!isLoaded(auth)){
-    return <div className="loading"> 
-              <img className="loading-image" src={require("./img/loadingPlant.png")} />
-            </div>;
+    return <PreLoader />
   } 
       return children
 }
