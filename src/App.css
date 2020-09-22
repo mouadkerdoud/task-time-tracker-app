@@ -31,6 +31,18 @@ body{
     background: blanchedalmond;
 }
 
+
+::-webkit-scrollbar
+{
+  width: 0.2rem;  /* for vertical scrollbars */
+}
+
+
+::-webkit-scrollbar-thumb
+{
+  background: var(--dark-blue);
+}
+
                        /* PRE LOADING */
 
 .loading{
@@ -407,14 +419,14 @@ header li{
   }
 
 
- 
+  .popover-lastchild{
+    border-bottom: none;
+
+  }
   
   .logout{
       text-decoration: none;
       color: black !important;
-      position: relative;
-      
-      
   }
 
             /* DASHBOARD MAIN CONTENT */

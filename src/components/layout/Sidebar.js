@@ -15,7 +15,7 @@ const Sidebar = (props) => {
                 <span className="popover-initials">{profile.initials}</span>
             </div>
             <div  className="popover-element">Profile Settings</div>
-            <div  className="popover-element"><SignedInLinks /></div>
+            <div  className="popover-element popover-lastchild"><SignedInLinks /></div>
         </Popover>
       );
     
